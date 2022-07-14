@@ -1,3 +1,7 @@
+<?php
+require 'config/database.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,7 +37,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link" href="be_part_of_us.html">| Be part of Us |</a>
+                <a class="nav-link" href="be_part_of_us.php">| Be part of Us |</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="#">| Donate Now |</a>
@@ -44,19 +48,19 @@
             </ul>
             <ul class="navbar-nav">
             <li>
-              <a class="nav-link active fst-italic fw-bold" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active fst-italic fw-bold" aria-current="page" href="index.php">Home</a>
             </li>
             <li>
-              <a class="nav-link" aria-current="page" href="aboutus.html">About Us</a>
+              <a class="nav-link" aria-current="page" href="aboutus.php">About Us</a>
             </li>
             <li>
-              <a class="nav-link" aria-current="page" href="news.html">News</a>
+              <a class="nav-link" aria-current="page" href="news.php">News</a>
             </li>
             <li>
-              <a class="nav-link" aria-current="page" href="stories.html">Stories</a>
+              <a class="nav-link" aria-current="page" href="stories.php">Stories</a>
             </li>
             <li>
-              <a class="nav-link" aria-current="page" href="events.html">Events</a>
+              <a class="nav-link" aria-current="page" href="events.php">Events</a>
             </li>
             <!-- <li>
               <a class="nav-link" aria-current="page" href="resource_library.html">Resources Librarily</a>
@@ -67,13 +71,13 @@
                   Resources Library
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonSM">
-                  <li><a class="dropdown-item" href="resource_library.html">Video Library</a></li>
-                  <li><a class="dropdown-item" href="motivational_page.html">Motivational quotes</a></li>
+                  <li><a class="dropdown-item" href="resource_library.php">Video Library</a></li>
+                  <li><a class="dropdown-item" href="motivational_page.php">Motivational quotes</a></li>
                 </ul>
               </div>             
             </li>
             <li>
-              <a class="nav-link" aria-current="page" href="contact.html">Contact Us</a>
+              <a class="nav-link" aria-current="page" href="contact.php">Contact Us</a>
             </li>
 
           </ul>

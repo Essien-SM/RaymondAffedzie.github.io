@@ -1,7 +1,13 @@
 <?php 
 include 'partials/header.php';
+
+// fetch news from database
+$news_query = "SELECT * FROM news ORDER BY date DESC LIMIT 10";
+$news = mysqli_query($connection, $news_query);
+
 ?>
-    <main class="container mt-5">
+
+    <main class="container mt-5">      
       <div class="row g-5 mt-3">
         <div class="col-md-12">
           <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark" 
@@ -31,50 +37,24 @@ include 'partials/header.php';
         </div>
 
           <div class="row">
+            <?php while($new = mysqli_fetch_assoc($news)): ?>
             <div class="col-md-3">
               <div class="card m-2">
                 <img src="assets/img/Picture1.png" width="100%" height="auto" alt="...">  
                 <div class="card-body">
-                  <h3>News</h3>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h3><?= $new['tittle'] ?></h3>
+                  <p class="card-text">
+                    <?= substr($new['content'], 0, 29)  ?>
+                  </p>
                   <p class="card-text">Read more</p>
+                  <small class="text-muted">
+                    <?= $new['date'] ?>
+                  </small>
                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
-              <div class="card m-2">
-                <img src="assets/img/Picture1.png" width="100%" height="auto" alt="...">  
-                <div class="card-body">
-                  <h3>News</h3>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text">Read more</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-              </div> 
-            </div>
-            <div class="col-md-3">
-              <div class="card m-2">
-                <img src="assets/img/Picture1.png" width="100%" height="auto" alt="...">  
-                <div class="card-body">
-                  <h3>News</h3>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text">Read more</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card m-2">
-                <img src="assets/img/Picture1.png" width="100%" height="auto" alt="...">  
-                <div class="card-body">
-                  <h3>News</h3>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text">Read more</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-              </div> 
-            </div>
+            <?php endwhile ?>
           </div>
 
 
@@ -120,7 +100,8 @@ include 'partials/header.php';
           </div>
         </div>
       </div>     
-      
-      <?php 
+
+
+<?php 
 include 'partials/footer.php';
 ?>

@@ -2,7 +2,7 @@
 include 'partials/header.php';
 
 // fetch news from database
-$news_query = "SELECT * FROM news ORDER BY date DESC LIMIT 10";
+$news_query = "SELECT * FROM news ORDER BY date DESC LIMIT 12";
 $news = mysqli_query($connection, $news_query);
 
 ?>
